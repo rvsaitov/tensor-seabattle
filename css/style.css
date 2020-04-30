@@ -47,6 +47,7 @@ body {
     text-align: center;
     width: 30px;
     height: 30px;
+    padding: 2px;
 }
 
 .rerun {
@@ -77,5 +78,6 @@ body {
     height: 50px;
     line-height: 50px;
     width: 250px;
+    font-size: 1.2em;
     transition: 0.3s all ease;
 }
