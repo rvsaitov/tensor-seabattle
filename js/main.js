@@ -57,6 +57,7 @@ const game = {
                     if (!game.playerShipsCount) {
                         process.textContent = 'Вы победили!';
                         process.style.color = colors.playerWon;
+                        computer_field.removeEventListener('click', game.shoot);
                     }
                 }
             }
@@ -71,6 +72,7 @@ const game = {
      * ИИ очень глупого компьютера
      */
     shotByComputer() {
+        
         let id = Math.floor(Math.random() * Math.floor(100))+'';
         if (id < 10) id = '0' + id; //добавляем нулевую координату X
         const target = document.getElementById(`${id}_player`);
@@ -100,10 +102,10 @@ const game = {
                     if (!game.computerShipsCount) {
                         process.textContent = 'Компьютер победил!';
                         process.style.color = colors.computerWon;
+                        computer_field.removeEventListener('click', game.shoot);
                     }
                 }
-                game.shotByComputer();
-                
+                game.shotByComputer(); //если компьютер попал - стреляет еще раз
             }
         }
     },
